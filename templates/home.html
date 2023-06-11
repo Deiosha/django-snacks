@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-3xl text-green-800">Welcome</h1>
+
+<!-- Where does 'things' come from? -->
+{% for thing in things %}
+  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <a href="{{ thing.reference_url }}">
+          <img class="rounded-t-lg" src="{{ thing.image_url }}" alt="" />
+      </a>
+      <div class="p-5">
+          <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ thing.title }}</h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ thing.description }}</p>
+
+      </div>
+  </div>
+{% endfor %}
+
+{% endblock content %}
+
